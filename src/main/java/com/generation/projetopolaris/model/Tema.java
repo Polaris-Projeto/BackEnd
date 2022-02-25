@@ -1,4 +1,5 @@
 package com.generation.projetopolaris.model;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -7,16 +8,17 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-@Table(name="tb_temas")
+@Table(name = "tb_temas")
 public class Tema {
-	
+
 	@Id
-	@GeneratedValue(strategy= GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	@NotBlank(message="O atributo é obrigatorio")
+
+	@NotBlank(message = "O atributo é obrigatorio")
 	private String descricao;
 
+	// Get E Set 
 	public Long getId() {
 		return id;
 	}
@@ -32,9 +34,5 @@ public class Tema {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-
-
-	
-	
 
 }
