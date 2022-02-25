@@ -10,7 +10,7 @@ import javax.validation.constraints.NotBlank;
 @Table(name="tb_temas")
 public class Tema {
 	
-	@Id
+	@Id //chave primaria
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Long id;
 	
