@@ -38,7 +38,7 @@ public class Usuario {
 
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("usuario")
-	private List<Postagem> postagens;
+	private List<Postagem> postagem;
 
 	public Long getId() {
 		return id;
@@ -81,11 +81,11 @@ public class Usuario {
 	}
 
 	public List<Postagem> getPostagens() {
-		return postagens;
+		return postagem;
 	}
 
 	public void setPostagens(List<Postagem> postagens) {
-		this.postagens = postagens;
+		this.postagem = postagens;
 	}
 
 }
