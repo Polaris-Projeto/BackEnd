@@ -46,10 +46,7 @@ public class UsuarioController {
 
 	@PostMapping
 	public ResponseEntity<Usuario> postUsuario(@Valid @RequestBody Usuario usuario) {
-		if (usuarioRepository.existsById(usuario.getId())) {
 			return ResponseEntity.status(HttpStatus.CREATED).body(usuarioRepository.save(usuario));
-		}
-		return ResponseEntity.badRequest().build();
 	}
 
 	@PutMapping
