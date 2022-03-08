@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
@@ -24,9 +25,9 @@ public class Tema {
 	@NotBlank(message = "O atributo é obrigatorio")
 	private String descricao;
 
-	@OneToMany(mappedBy = "tema", cascade = CascadeType.REMOVE)
+	@OneToMany(mappedBy = "tema", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("tema")
-	private List<Postagem> postagem;
+	private List<Postagem> postagens;
 
 	public Long getId() {
 		return id;
@@ -45,11 +46,11 @@ public class Tema {
 	}
 
 	public List<Postagem> getPostagens() {
-		return postagem;
+		return postagens;
 	}
 
 	public void setPostagens(List<Postagem> postagens) {
-		this.postagem = postagens;
+		this.postagens = postagens;
 	}
 
 }
