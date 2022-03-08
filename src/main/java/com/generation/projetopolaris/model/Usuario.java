@@ -31,12 +31,12 @@ public class Usuario {
 	private String usuario;
 
 	@NotBlank(message = "A senha não pode ser nula!")
-	@Size(min = 8, max = 12, message = "O atributo senha deve conter no mínimo 8 e no máximo 12 caracteres")
+	@Size(min = 8, message = "O atributo senha deve conter no mínimo 8 caracteres")
 	private String senha;
 
 	private String foto;
 
-	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("usuario")
 	private List<Postagem> postagens;
 

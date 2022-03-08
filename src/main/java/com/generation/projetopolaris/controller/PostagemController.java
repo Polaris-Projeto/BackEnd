@@ -61,7 +61,7 @@ public class PostagemController {
 	}
 
 	@PutMapping
-	public ResponseEntity<Postagem> putPostagem(@Valid Postagem postagem) {
+	public ResponseEntity<Postagem> putPostagem(@Valid @RequestBody Postagem postagem) {
 		if (postagemRepository.existsById(postagem.getId())) {
 			return ResponseEntity.status(HttpStatus.OK).body(postagemRepository.save(postagem));
 		}
