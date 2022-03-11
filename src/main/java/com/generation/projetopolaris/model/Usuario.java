@@ -84,12 +84,12 @@ public class Usuario {
 		this.foto = foto;
 	}
 
-	public List<Postagem> getPostagens() {
+	public List<Postagem> getPostagem() {
 		return postagem;
 	}
 
-	public void setPostagens(List<Postagem> postagens) {
-		this.postagem = postagens;
+	public void setPostagem(List<Postagem> postagem) {
+		this.postagem = postagem;
 	}
 
 }
