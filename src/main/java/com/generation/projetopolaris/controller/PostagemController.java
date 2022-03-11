@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.generation.projetopolaris.model.Postagem;
 import com.generation.projetopolaris.repository.PostagemRepository;
 import com.generation.projetopolaris.repository.TemaRepository;
-import com.generation.projetopolaris.repository.UsuarioRepository;
 
 @RestController
 @RequestMapping("/postagens")
