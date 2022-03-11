@@ -35,14 +35,6 @@ public class UsuarioLogin {
 		return usuario;
 	}
 
-	public String getToken() {
-		return token;
-	}
-
-	public void setToken(String token) {
-		this.token = token;
-	}
-
 	public void setUsuario(String usuario) {
 		this.usuario = usuario;
 	}
@@ -61,6 +53,16 @@ public class UsuarioLogin {
 
 	public void setFoto(String foto) {
 		this.foto = foto;
-	}	
+	}
+
+	public String getToken() {
+		return token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+	}
+
+
 	
 }

@@ -1,7 +1,5 @@
 package com.generation.projetopolaris.model;
 
-import java.time.LocalDateTime;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,8 +8,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
-
-import org.hibernate.annotations.UpdateTimestamp;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -30,9 +26,6 @@ public class Postagem {
 	@NotBlank(message = "O atributo texto é obrigatório!")
 	@Size(min = 3, max = 5000, message = "O atributo texto deve conter no mínimo 5 e no máximo 5000 caracteres")
 	private String texto;
-
-	@UpdateTimestamp
-	private LocalDateTime data;
 
 	@ManyToOne
 	@JsonIgnoreProperties("postagem")
@@ -66,14 +59,6 @@ public class Postagem {
 		this.texto = texto;
 	}
 
-	public LocalDateTime getData() {
-		return data;
-	}
-
-	public void setData(LocalDateTime data) {
-		this.data = data;
-	}
-
 	public Tema getTema() {
 		return tema;
 	}
@@ -89,5 +74,8 @@ public class Postagem {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
+
+	
+
 
 }

@@ -33,8 +33,7 @@ public class PostagemController {
 	@Autowired
 	private TemaRepository temaRepository;
 
-	@Autowired
-	private UsuarioRepository usuarioRepository;
+
 
 	@GetMapping("/all")
 	public ResponseEntity<List<Postagem>> getAll() {
@@ -54,8 +53,7 @@ public class PostagemController {
 
 	@PostMapping
 	public ResponseEntity<Postagem> postPostagem(@Valid @RequestBody Postagem postagem) {
-		if (temaRepository.existsById(postagem.getTema().getId())
-				&& usuarioRepository.existsById(postagem.getUsuario().getId()))
+		if (temaRepository.existsById(postagem.getTema().getId()))
 			return ResponseEntity.status(HttpStatus.CREATED).body(postagemRepository.save(postagem));
 		return ResponseEntity.badRequest().build();
 	}
